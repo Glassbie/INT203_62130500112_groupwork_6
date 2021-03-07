@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Basic Vue Js - HelloWorld App</title>
+
+
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet" />
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+
+  <!-- Using via Google Web Fonts -->
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+
+
+  <!-- https://tailwindcss.com/docs/installation -->
+
+  <!-- Using Tailwind via CDN -->
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+
+  <!-- Vue CDN -->
+
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+
+
+
+</head>
+
+
+
+<body>
+  <div class='ml-4' id="app">
+
+
+    <div class="bg-purple-600 text-white p-3 lg:w-1/4 sm:w-4/4 md:w-2/4 rounded text-center py-8 hover:shadow-md ">
+      <div class="flex justify-center mb-2"> <img v-bind:src="image"
+          class="rounded-full h-24 w-24 flex items-center justify-center"> </div>
+      <h1 class="text-3xl">{{ fname }} {{ lname }}</h1> <span class="text-1xl">{{ status }}</span>
+      <div class="mt-3"> <a href='https://www.facebook.com/thitikorn.james/'><i class="fa fa-facebook mr-2"></i></a> <a
+          href="https://www.instagram.com/pudding_nee_see_sakura/"><i class="fa fa-instagram mr-2"></i></a> <a
+          href="https://twitter.com/Glassbie_jamthi"><i class="fa fa-twitter mr-2"></i></a> <a
+          href="https://github.com/Glassbie"><i class="fa fa-git mr-2"></i></a> </div>
+    </div>
+
+
+    <div v-show='errors'>
+      <ul v-for='error in errors'>
+        <li class='text-red-600'> {{ error }} </li>
+      </ul>
+    </div>
+
+
+
+    <div class='m-4 w-1/2'>
+      <form @submit.prevent='checkForm' method="post">
+        <div class='rounded bg-gray-100 p-5'>
+        <div class='grid grid-cols-2 mb-4' >
+          <label for="fname">First name:</label>   <input class='border-2' type="text"  id="fname"    v-model="fname">
+          <label for="lname">Last name:</label>    <input class='border-2' type="text"  id="lname"    v-model="lname">
+          <label for="Email">Email:</label>        <input class='border-2' type="text"  id="fname"    v-model="email">
+          <label for="age">Age:</label>            <input class='border-2' type="number"  id="age"    v-model.number="age">
+        </div>
+          <p>Gender</p>
+          <input type="radio" id="male"  value="male" v-model="gender">
+          <label for="male">male</label>
+          <input type="radio" id="female"value="female" v-model="gender">
+          <label for="female">female</label>
+        </div>
+
+     
+          
+
+
+
+
+        <input class='border-2 p-2 bg-green-300' type="submit" value="Submit">
+
+
+      </form>
+
+
+    </div>
+
+
+
+
+  </div>
+
+
+
+  <!-- my main.js -->
+
+  <script src="./profile.js"></script>
+
+</body>
+
+
+
+</html>
